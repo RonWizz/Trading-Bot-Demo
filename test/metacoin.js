@@ -38,9 +38,6 @@ contract("MetaCoin", accounts => {
     await instance.sendCoin(account2, amount, { from: account1 });
 
     // get final balances
-    const finalBalance1 = await instance.getBalance.call(account1);
-    const finalBalance2 = await instance.getBalance.call(account2);
-
     assert.equal(
       finalBalance1.toNumber(),
       initBalance1.toNumber() - amount,
